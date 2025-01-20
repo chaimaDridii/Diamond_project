@@ -17,6 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = mysqli_query($conn, $query);
         
         if (mysqli_num_rows($result) > 0) {
+          $_SESSION['utilisateur_id'] = $user['id'];
+          $_SESSION['nom_utilisateur'] = $user['nom'];
             // Si l'utilisateur est trouvé, rediriger vers la page d'accueil
             header("Location: index.php");
             exit();
@@ -219,7 +221,7 @@ a:hover {
 }
 
 body {
-  background-image: url("image.jpg");
+  background-image: url("assets/img/image.jpg");
   background-repeat: no-repeat;
   background-size: 145%;
 
@@ -235,7 +237,7 @@ fieldset#coordonnees {
   width: 20em;
   height: 5em;
   margin-top: 10em;
-  background-image: url("image.jpg");
+  background-image: url("assets/img/image.jpg");
   border-radius: 1em;
   text-align: center;
   font-size: 1.2em;
@@ -254,7 +256,7 @@ fieldset#coordonnees {
 
 input.button {
   margin-top: 2em;
-  background-image: url("im.jpg");
+  background-image: url("assets/img/im.jpg");
   color: white;
   size: 10em;
   font-family: "Times New Roman", serif;
@@ -429,7 +431,7 @@ h1 {
         <?php if (!empty($error_message)): ?>
             <div class="alert alert-error">
                 <h1><?= $error_message ?></h1>
-                <a href="inscrit.html">Cliquez ici pour l'inscription</a>
+                <a href="pages/inscrit.php">Cliquez ici pour l'inscription</a>
             </div>
         <?php endif; ?>
         <!-- Formulaire de connexion -->
@@ -453,7 +455,7 @@ h1 {
         </form>
 
         <div class="text-center pt-3 text-muted">
-            Vous n'êtes pas inscrit ? <a href="inscrit.html">Inscription</a>
+            Vous n'êtes pas inscrit ? <a href="inscrit.php">Inscription</a>
         </div>
     </div>
 </center>

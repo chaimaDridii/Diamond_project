@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (!mysqli_query($conn, $Ajouter)) {
                     $message = "Une erreur est survenue lors de l'inscription.";
                 } else {
-                    header("Location: index.php");
+                    header("Location: connexion.php");
                     exit();
                 }
             }
@@ -232,7 +232,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     }
     body {
-      background-image: url("image.jpg");
+      background-image: url("./assets/img/image.jpg");
       background-repeat: no-repeat;
       background-size: 145%;
       background-position: center;
@@ -245,7 +245,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       height: 15em;
       margin-top: 1em;
       margin-bottom: -0.1em;
-      background-image: url("img777.jpg");
+      background-image: url("./assets/img/img777.jpg");
       border-radius: 1em;
       text-align: center;
       font-size: 1.2em;
@@ -453,7 +453,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="text-center pt-3 text-muted">
-                Vous avez déjà un compte ? <a href="connexion1.php">Connectez-vous</a>
+                Vous avez déjà un compte ? <a href="pages/connexion.php">Connectez-vous</a>
             </div>
         </div>
     </form>
